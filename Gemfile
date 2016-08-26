@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg'
 
 group :development, :test do
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'byebug', platform: :mri
 end

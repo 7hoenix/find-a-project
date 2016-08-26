@@ -1,1 +1,11 @@
-<h1>Hello World</h1>
+<h1>Waza Projects</h1>
+
+There are currently <%= @projects.count %> active projects.
+
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <%= project.description %>
+    </li>
+  <% end %>
+</ul>
