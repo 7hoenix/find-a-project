@@ -14,5 +14,18 @@ describe ProjectMembership do
     expect(member.project).to eq(project)
   end
 
+  it "can be found by Project" do
+    project = Project.create!({
+      description: "working on iOS"
+    })
+    ["Justin", "Eric"].each do |name|
+      ProjectMembership.create!({
+        user_name: name,
+        project_id: project.id
+      })
+    end
+    expect(project.project_memberships.count).to eq(2)
+  end
+
 end
 
