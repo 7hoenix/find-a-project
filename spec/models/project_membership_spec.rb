@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe ProjectMembership do
 
-  it "has a user name" do
+  it "has association to a Project" do
     project = Project.create!({
       description: "working on iOS"
     })
