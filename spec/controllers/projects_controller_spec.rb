@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe WelcomeController do
+describe ProjectsController do
 
   describe "Getting the index" do
     it "works" do
