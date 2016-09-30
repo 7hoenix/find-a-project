@@ -11,5 +11,9 @@ class ProjectsController < ApplicationController
     redirect_to(action: "index")
   end
 
-end
+  def destroy_all
+    Project.destroy_all
+    redirect_to(admin_path)
+  end
 
+end

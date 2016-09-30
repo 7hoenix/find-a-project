@@ -31,5 +31,20 @@ describe ProjectsController do
     end
   end
 
-end
+  describe "Destroying all projects" do
+    it "redirects to admin" do
+      delete :destroy_all
 
+      expect(response).to redirect_to(admin_path)
+    end
+
+    it "removes all projects" do
+      Project.create!(description: "Working on iOS")
+
+      delete :destroy_all
+
+      expect(Project.count).to eq(0)
+    end
+  end
+
+end
