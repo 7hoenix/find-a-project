@@ -1,3 +1,8 @@
 <h1>Welcome Admin</h1>
+
+<% if flash[:success] %>
+  <div><%= flash[:success] %></div>
+<% end %>
+
 <%= link_to "All projects", root_path %>
 <%= link_to "Delete projects", reset_projects_path, method: "delete"%>

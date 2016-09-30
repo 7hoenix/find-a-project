@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
 
   def destroy_all
     Project.destroy_all
+    flash[:success] = "All projects were deleted"
     redirect_to(admin_path)
   end
 

@@ -45,6 +45,12 @@ describe ProjectsController do
 
       expect(Project.count).to eq(0)
     end
+
+    it "includes a flash message" do
+      delete :destroy_all
+
+      expect(flash[:success]).to eq("All projects were deleted")
+    end
   end
 
 end
