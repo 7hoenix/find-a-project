@@ -1,9 +1,11 @@
-<h1>Waza Projects</h1>
+<h1>Waza Board</h1>
 <h3>Add a Project</h3>
 <%= form_for :project, url: projects_path do |f| %>
   <%= f.text_area :description %>
   <%= f.submit "Create Project" %>
 <% end %>
+
+<h3>Active Projects</h3>
 
 There are currently <%= @projects.count %> active projects.
 
