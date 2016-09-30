@@ -11,8 +11,6 @@ There are currently <%= @projects.count %> active projects.
 
 <ul>
   <% @projects.each do |project| %>
-    <li>
-      <%= project.description %>
-    </li>
+    <%= render partial: "projects/show", locals: {project: project} %>
   <% end %>
 </ul>
