@@ -27,11 +27,21 @@ $medium: 700px;
 
 body {
   font-family: 'Lato', sans-serif;
-  margin: 2em;
+  margin: 0;
+  background-color: $lightGray;
 }
 
-header, section, footer {
+section, footer {
   @include outer-container;
+}
+
+header h1 {
+  @include fill-parent;
+  background-color: $blue;
+  color: $darkNavy;
+  margin: 0;
+  padding: 0.5em;
+  font-size: 2em;
 }
 
 [class*="module__"] {
@@ -64,9 +74,9 @@ header, section, footer {
 .project-list .project {
   @include span-columns(12);
   @include omega();
-  border: solid 1px $darkGray;
+  background-color: white;
   border-radius: 5px;
-  background: $lightGray;
+  border: solid 1px $darkGray;
   margin-bottom: 20px;
   padding: 20px;
 
