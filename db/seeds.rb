@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+projects = [{
+  description: "Working on iOS",
+  member_names: ["Eric", "Cyrus"]
+}, {
+  description: "Learning Clojure",
+  member_names: ["Justin"]
+}, {
+  description: "Watching Clean Coders Videos",
+  member_names: ["Damon", "Eva", "Colin"]
+}, {
+  description: "Robots!",
+  member_names: ["Diana", "Erica"]
+}, {
+  description: "Clojure Testing Framework",
+  member_names: ["Aaron"]
+}]
+
+projects.each do |project_attributes|
+  project = Project.create!(description: project_attributes[:description])
+  project_attributes[:member_names].each do |member_name|
+    project.project_memberships.build(user_name: member_name)
+  end
+  project.save!
+end
