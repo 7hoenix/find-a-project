@@ -16,11 +16,25 @@
 @import "bourbon";
 @import "neat";
 
+$blue: #27A8E0;
+$darkNavy: #29323C;
+$lightGray: #EEF2F5;
+$regularGray: #8894A0;
+$darkGray: #626E7A;
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 .project-list {
   @include outer-container;
 
   .project {
     @include span-columns(4);
     @include omega(3n);
+    border: solid 1px $darkGray;
+    background: $lightGray;
+    margin-bottom: 20px;
+    padding: 20px;
   }
 }

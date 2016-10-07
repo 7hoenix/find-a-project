@@ -7,10 +7,14 @@
 
 <h3>Active Projects</h3>
 
-There are currently <%= @projects.count %> active projects.
 
 <ul class="project-list">
   <% @projects.each do |project| %>
     <%= render partial: "projects/show", locals: {project: project} %>
   <% end %>
 </ul>
+
+
+
+There are currently <%= @projects.count %> active projects.
+
