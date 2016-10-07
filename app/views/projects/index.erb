@@ -13,14 +13,12 @@
 </section>
 
 <section>
-  <div class="module__collection">
-    <h3>Active Projects</h3>
-    <ul class="project-list">
-      <% @projects.each do |project| %>
-        <%= render partial: "projects/show", locals: {project: project} %>
-      <% end %>
-    </ul>
-  </div>
+  <h3>Active Projects</h3>
+  <ul class="project-list">
+    <% @projects.each do |project| %>
+      <%= render partial: "projects/show", locals: {project: project} %>
+    <% end %>
+  </ul>
 </section>
 
 <footer>

@@ -32,57 +32,65 @@ body {
 }
 
 section, footer {
-  @include outer-container;
+  @media(min-width: $medium) {
+    @include outer-container;
+  }
 }
 
-header h1 {
-  @include fill-parent;
+header {
   background-color: $blue;
   color: $darkNavy;
   margin: 0;
-  padding: 0.5em;
+  padding: 1em;
+}
+
+header h1 {
+  @include outer-container;
   font-size: 2em;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 [class*="module__"] {
 }
 
 .module__form {
-  @include span-columns(12);
+  input {
+    width: 100%;
+  }
 
   @media(min-width: $medium) {
     @include span-columns(8);
     @include shift(2);
   }
-
-  input {
-    width: 100%;
-  }
-
-  button {
-  }
-}
-
-.module__collection {
-  @include span-columns(12);
 }
 
 .project-list {
-  margin-right: 2em;
+  list-style-type: none;
+  list-style: none;
+  padding: 0;
+
+  @media(min-width: $medium) {
+    margin: 1em;
+  }
+}
+
+.project-list .project:first-of-type {
+  border-top: solid 1px $darkGray;
 }
 
 .project-list .project {
   @include span-columns(12);
-  @include omega();
   background-color: white;
-  border-radius: 5px;
-  border: solid 1px $darkGray;
-  margin-bottom: 20px;
-  padding: 20px;
+  border-bottom: solid 1px $darkGray;
+  padding: 1em;
 
   @media(min-width: $medium) {
     @include span-columns(4);
     @include omega(3n);
+    border-radius: 5px;
+    border: solid 1px $darkGray;
+    margin-bottom: 20px;
   };
 }
 
@@ -94,8 +102,4 @@ header h1 {
 
 .project {
   height: 200px;
-}
-
-.project-count {
-  @include span-columns(12);
 }
