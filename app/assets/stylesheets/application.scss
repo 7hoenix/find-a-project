@@ -38,5 +38,11 @@ body {
     background: $lightGray;
     margin-bottom: 20px;
     padding: 20px;
+
+    .project-description {
+      color: $darkNavy;
+      font-size: 2em;
+      text-align: center;
+    }
   }
 }
