@@ -51,6 +51,16 @@ describe ProjectsController do
 
       expect(flash[:success]).to eq("All projects were deleted")
     end
+
+    it "destroys any project memberships" do
+      project = Project.create!(description: "Working on iOS")
+      project.project_memberships.build(user_name: "Eric")
+      project.save!
+
+      delete :destroy_all
+
+      expect(ProjectMembership.count).to eq(0)
+    end
   end
 
 end
