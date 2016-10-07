@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'pg'
+gem 'bourbon'
+gem 'neat'
 
 group :development, :test do
   gem 'rails-controller-testing'

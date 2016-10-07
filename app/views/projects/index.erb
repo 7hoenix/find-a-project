@@ -9,7 +9,7 @@
 
 There are currently <%= @projects.count %> active projects.
 
-<ul>
+<ul class="project-list">
   <% @projects.each do |project| %>
     <%= render partial: "projects/show", locals: {project: project} %>
   <% end %>
