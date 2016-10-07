@@ -13,8 +13,14 @@ projects = [{
   description: "Learning Clojure",
   member_names: ["Justin"]
 }, {
-  description: "Wathing Clean Coders Videos",
+  description: "Watching Clean Coders Videos",
   member_names: ["Damon", "Eva", "Colin"]
+}, {
+  description: "Robots!",
+  member_names: ["Diana", "Erica"]
+}, {
+  description: "Clojure Testing Framework",
+  member_names: ["Aaron"]
 }]
 
 projects.each do |project_attributes|
