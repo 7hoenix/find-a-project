@@ -26,23 +26,38 @@ $darkGray: #626E7A;
 body {
   @include outer-container;
   font-family: 'Lato', sans-serif;
+  margin: 2em;
 }
 
 .project-list {
-  @include outer-container;
+  margin-right: 2em;
+}
 
-  .project {
+.project-list .project {
+  @include span-columns(12);
+  @include omega();
+  border: solid 1px $darkGray;
+  border-radius: 5px;
+  background: $lightGray;
+  margin-bottom: 20px;
+  padding: 20px;
+
+  @media(min-width:650px) {
     @include span-columns(4);
     @include omega(3n);
-    border: solid 1px $darkGray;
-    background: $lightGray;
-    margin-bottom: 20px;
-    padding: 20px;
+  };
+}
 
-    .project-description {
-      color: $darkNavy;
-      font-size: 2em;
-      text-align: center;
-    }
-  }
+.project-list .project-description {
+  color: $darkNavy;
+  font-size: 2em;
+  text-align: center;
+}
+
+.project {
+  height: 200px;
+}
+
+.project-count {
+  @include span-columns(12);
 }
