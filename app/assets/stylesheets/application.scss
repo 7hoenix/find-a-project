@@ -15,6 +15,7 @@
 
 @import "bourbon";
 @import "neat";
+@import 'https://fonts.googleapis.com/css?family=Lato';
 
 $blue: #27A8E0;
 $darkNavy: #29323C;
@@ -23,7 +24,8 @@ $regularGray: #8894A0;
 $darkGray: #626E7A;
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  @include outer-container;
+  font-family: 'Lato', sans-serif;
 }
 
 .project-list {
