@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+@import "bourbon";
+@import "neat";
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+$blue: #27A8E0;
+$darkNavy: #29323C;
+$lightGray: #EEF2F5;
+$regularGray: #8894A0;
+$darkGray: #626E7A;
+
+$medium: 700px;
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 2em;
+}
+
+header, section, footer {
+  @include outer-container;
+}
+
+[class*="module__"] {
+}
+
+.module__form {
+  @include span-columns(12);
+
+  @media(min-width: $medium) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+  }
+}
+
+.module__collection {
+  @include span-columns(12);
+}
+
+.project-list {
+  margin-right: 2em;
+}
+
+.project-list .project {
+  @include span-columns(12);
+  @include omega();
+  border: solid 1px $darkGray;
+  border-radius: 5px;
+  background: $lightGray;
+  margin-bottom: 20px;
+  padding: 20px;
+
+  @media(min-width: $medium) {
+    @include span-columns(4);
+    @include omega(3n);
+  };
+}
+
+.project-list .project-description {
+  color: $darkNavy;
+  font-size: 2em;
+  text-align: center;
+}
+
+.project {
+  height: 200px;
+}
+
+.project-count {
+  @include span-columns(12);
+}

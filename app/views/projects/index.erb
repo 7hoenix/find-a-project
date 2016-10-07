@@ -1,16 +1,28 @@
-<h1>Waza Board</h1>
-<h3>Add a Project</h3>
-<%= form_for :project, url: projects_path do |f| %>
-  <%= f.text_area :description %>
-  <%= f.submit "Create Project" %>
-<% end %>
+<header>
+  <h1>Waza Board</h1>
+</header>
 
-<h3>Active Projects</h3>
+<section>
+  <div class="module__form">
+    <h3>Add a Project</h3>
+    <%= form_for :project, url: projects_path do |f| %>
+      <%= f.text_field :description %>
+      <%= f.submit "Create Project" %>
+    <% end %>
+  </div>
+</section>
 
-There are currently <%= @projects.count %> active projects.
+<section>
+  <div class="module__collection">
+    <h3>Active Projects</h3>
+    <ul class="project-list">
+      <% @projects.each do |project| %>
+        <%= render partial: "projects/show", locals: {project: project} %>
+      <% end %>
+    </ul>
+  </div>
+</section>
 
-<ul>
-  <% @projects.each do |project| %>
-    <%= render partial: "projects/show", locals: {project: project} %>
-  <% end %>
-</ul>
+<footer>
+  <h1 class="project-count">There are currently <%= @projects.count %> active projects.</h1>
+</footer>
